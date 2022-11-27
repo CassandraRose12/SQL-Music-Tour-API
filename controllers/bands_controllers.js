@@ -49,6 +49,22 @@ bands.put('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
+// DELETE A BAND
+bands.delete('/:id', async (req, res) => {
+    try {
+        const deletedBands = await Band.destroy({
+            where: {
+                band_id: req.params.id
+            }
+        })
+        res.status(200).json({
+            message: `Successfully deleted ${deletedBands} band(s)`
+        })
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
+
 
 
 
