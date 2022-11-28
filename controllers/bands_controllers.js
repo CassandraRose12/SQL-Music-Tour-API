@@ -17,6 +17,7 @@ bands.get('/', async (req, res) => {
         res.status(500).json(error)
     }
 });
+
 // FIND A SPECIFIC BAND
 bands.get('/:id', async (req, res) => {
     try {
